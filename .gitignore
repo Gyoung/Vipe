@@ -1,0 +1,12 @@
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
+target/
+*.log
+*.log*
+us.stackdump
+*.orig
+dependency-reduced-pom.xml
+.launcher/
