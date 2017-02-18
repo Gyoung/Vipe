@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>common/vipe-common</module>
+        <module>common/vipe-common-entity</module>
+        <module>common/vipe-common-mybatis</module>
         <module>ui/vipe-web</module>
         <module>module/vipe-service</module>
         <module>module/vipe-service-impl</module>
