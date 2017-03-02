@@ -13,6 +13,18 @@ import java.util.List;
 public interface IBaseInService<T extends MasterEntity> {
 
     /**
+     * 获取用户信息
+     * @return
+     */
+    AuthData getAuthData();
+
+    /**
+     * 设置用户信息
+     * @param authData
+     */
+    void setAuthData(AuthData authData);
+
+    /**
      * 新增
      *
      * @param entity
