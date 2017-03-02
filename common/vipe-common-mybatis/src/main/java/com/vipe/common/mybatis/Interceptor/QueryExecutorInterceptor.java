@@ -1,4 +1,4 @@
-package com.vipe.common.mybatis.Interceptor;
+package com.vipe.common.mybatis.interceptor;
 
 import org.apache.ibatis.builder.SqlSourceBuilder;
 import org.apache.ibatis.executor.Executor;

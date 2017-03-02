@@ -12,5 +12,26 @@
 
     <artifactId>vipe-service</artifactId>
 
+    <properties>
+        <hibernate-validator.version>5.0.0.CR3</hibernate-validator.version>
+        <persistence.version>1.0</persistence.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.gyoung</groupId>
+            <artifactId>vipe-common-entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>${persistence.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+    </dependencies>
 </project>
