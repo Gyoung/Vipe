@@ -12,5 +12,17 @@
 
     <artifactId>vipe-common</artifactId>
 
+    <properties>
+        <spring.version>4.2.4.RELEASE</spring.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
