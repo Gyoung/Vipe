@@ -1,6 +1,9 @@
-package com.vipe.service;
+package com.vipe.service.impl;
 
-import com.vipe.common.entity.*;
+
+import com.vipe.common.entity.AuthData;
+import com.vipe.common.entity.PageList;
+import com.vipe.common.entity.QueryPage;
 import com.vipe.service.entity.MasterEntity;
 
 import java.util.List;
@@ -8,11 +11,23 @@ import java.util.List;
 
 /**
  * 内部服务基接口
- * Created by zengjiyang on 2016/1/25.
+ * Created by qiuyungen on 2016/3/26.
  */
 public interface IBaseInService<T extends MasterEntity> {
 
+    /**
+     * 获取用户信息
+     *
+     * @return
+     */
+    AuthData getAuthData();
 
+    /**
+     * 设置用户信息
+     *
+     * @param authData
+     */
+    void setAuthData(AuthData authData);
 
     /**
      * 新增
@@ -20,7 +35,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param entity
      * @return
      */
-    ServiceResult add(AuthData authData, T entity);
+    int add(T entity) throws Exception;
 
     /**
      * 批量新增
@@ -28,7 +43,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param entities
      * @return
      */
-    ServiceResult addList(AuthData authData, List<T> entities);
+    int addList(List<T> entities) throws Exception;
 
     /**
      * 删除
@@ -36,7 +51,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param id
      * @return
      */
-    ServiceResult deleteById(AuthData authData, String id);
+    int deleteById(String id) throws Exception;
 
 
     /**
@@ -45,7 +60,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param ids
      * @return
      */
-    ServiceResult deleteByIds(AuthData authData, String ids);
+    int deleteByIds(String ids) throws Exception;
 
     /**
      * 更新
@@ -53,7 +68,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param entity
      * @return
      */
-    ServiceResult update(AuthData authData, T entity);
+    int update(T entity) throws Exception;
 
     /**
      * 批量更新
@@ -61,7 +76,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param entities
      * @return
      */
-    ServiceResult updateList(AuthData authData, List<T> entities);
+    boolean updateList(List<T> entities) throws Exception;
 
     /**
      * 获取单个对象
@@ -69,7 +84,7 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param id
      * @return
      */
-    ServiceResultT<T> getById(AuthData authData, String id);
+    T getById(String id) throws Exception;
 
 
     /**
@@ -77,7 +92,7 @@ public interface IBaseInService<T extends MasterEntity> {
      *
      * @return
      */
-    ServiceResultT<List<T>> getList(AuthData authData);
+    List<T> getList() throws Exception;
 
 
     /**
@@ -86,6 +101,6 @@ public interface IBaseInService<T extends MasterEntity> {
      * @param queryPage
      * @return
      */
-    ServiceResultT<PageList<T>> getList(AuthData authData, QueryPage queryPage, Class<T> cls);
+    PageList<T> getList(QueryPage queryPage, Class<T> cls) throws Exception;
 
 }

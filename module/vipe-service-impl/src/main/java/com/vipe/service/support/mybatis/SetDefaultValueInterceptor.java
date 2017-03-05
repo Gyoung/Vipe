@@ -1,4 +1,4 @@
-package com.vipe.service.mybatis;
+package com.vipe.service.support.mybatis;
 
 import com.vipe.common.entity.AuthData;
 import com.vipe.service.context.ServiceContext;

@@ -2,15 +2,16 @@ package com.vipe.service.impl;
 
 
 
+import com.alibaba.dubbo.rpc.service.GenericException;
+import com.alibaba.dubbo.rpc.service.GenericService;
 import com.github.pagehelper.PageInfo;
 
 import com.vipe.common.entity.AuthData;
 import com.vipe.common.entity.PageList;
 import com.vipe.common.entity.QueryPage;
 import com.vipe.common.util.StringUtil;
-import com.vipe.service.IBaseInService;
 import com.vipe.service.entity.MasterEntity;
-import com.vipe.service.exception.VipeException;
+import com.vipe.service.exception.BizException;
 import com.vipe.service.mapper.IMyMapper;
 import com.vipe.service.util.SqlHelper;
 import org.apache.ibatis.annotations.Param;
@@ -93,14 +94,14 @@ public abstract class BaseInServiceImpl<T extends MasterEntity, TMapper extends 
     @Override
     public int deleteById(String id) throws Exception {
         if (StringUtil.isNullOrWhiteSpace(id))
-            throw new VipeException("删除参数不能为空");
+            throw new BizException("删除参数不能为空");
         return getMapper().deleteByPrimaryKey(id);
     }
 
     @Override
     public int deleteByIds(String ids) throws Exception {
         if (StringUtil.isNullOrWhiteSpace(ids))
-            throw new VipeException("批量删除参数不能为空");
+            throw new BizException("批量删除参数不能为空");
         return getMapper().deleteByIds(ids.split(","));
     }
 
@@ -124,7 +125,7 @@ public abstract class BaseInServiceImpl<T extends MasterEntity, TMapper extends 
     public T getById(String id) throws Exception {
 
         if (StringUtil.isNullOrWhiteSpace(id))
-            throw new VipeException("Id不能为空!");
+            throw new BizException("Id不能为空!");
         return getMapper().selectByPrimaryKey(id);
     }
 
@@ -144,10 +145,6 @@ public abstract class BaseInServiceImpl<T extends MasterEntity, TMapper extends 
         pageList.setRows(results);
         return pageList;
     }
-
-   /* public int defaultUpdate(T t) {
-        return getMapper().defaultUpdate(t);
-    }*/
 
     //region //空函数，转接
 
