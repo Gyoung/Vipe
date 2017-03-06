@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zoe.phip.module.service">
-    <resultMap id="SimpleEntityResultMap" type="com.zoe.phip.module.service.entity.SimpleEntity">
-        <id column="ID" property="id" javaType="java.lang.String" jdbcType="VARCHAR"/>
-    </resultMap>
-    <resultMap id="BaseEntityResultMap" type="com.zoe.phip.module.service.entity.BaseEntity">
+<mapper namespace="com.vipe.service.entity">
+    <resultMap id="BaseEntityResultMap" type="com.vipe.service.entity.BaseEntity">
         <id column="ID" property="id" javaType="java.lang.String" jdbcType="VARCHAR"/>
         <result column="CREATE_AT" property="createAt" javaType="java.sql.Timestamp" jdbcType="TIMESTAMP"/>
         <result column="CREATE_BY" property="createBy" javaType="java.lang.String" jdbcType="VARCHAR"/>
     </resultMap>
-    <resultMap id="MasterEntityResultMap" type="com.zoe.phip.module.service.entity.MasterEntity" extends="BaseEntityResultMap">
+    <resultMap id="MasterEntityResultMap" type="com.vipe.service.entity.MasterEntity" extends="BaseEntityResultMap">
         <result column="MODIFY_AT" property="modifyAt" javaType="java.sql.Timestamp" jdbcType="TIMESTAMP"/>
         <result column="MODIFY_BY" property="modifyBy" javaType="java.lang.String" jdbcType="VARCHAR"/>
         <result column="STATE" property="state" javaType="java.lang.Integer" jdbcType="INTEGER"/>
